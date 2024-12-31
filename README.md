@@ -11,13 +11,13 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
 </p>
 
-I prepared the certification with Zindi at the end of 2024 and earned it on 31 December 2024. The repository follows the six parts of the DP-100 learning path on Microsoft Learn. Each part has a short summary per module, and the later parts include the lab notebooks I ran in my own Azure ML workspace.
+I prepared the certification with Zindi at the end of 2024 and earned it on 31 December 2024 (valid until 31 December 2025). The repository follows the six parts of the DP-100 learning path on Microsoft Learn. Each part has a short summary per module, and the later parts include the lab notebooks I ran in my own Azure ML workspace.
 
 <p align="center">
   <img src="media/azure-data-scientist-certificate.png" alt="Microsoft Certified: Azure Data Scientist Associate certificate, earned on December 31, 2024" width="75%">
 </p>
 
-The credential can be checked on [Microsoft Learn](https://learn.microsoft.com/en-us/users/waanyantudre/credentials/certification/azure-data-scientist?tab=credentials-tab). A PDF copy is in [`05.Manage and review models in Azure ML/img/`](05.Manage%20and%20review%20models%20in%20Azure%20ML/img).
+The credential can be checked on [Microsoft Learn](https://learn.microsoft.com/en-us/users/waanyantudre/credentials/certification/azure-data-scientist?tab=credentials-tab). A PDF copy is in [`media/azure-data-scientist-credential.pdf`](media/azure-data-scientist-credential.pdf).
 
 ## What is inside
 
@@ -45,12 +45,11 @@ flowchart LR
     E --> H["Batch endpoint<br/>scores patient CSV files"]
 ```
 
-- **Lab_09, hyperparameter tuning.** A sweep job tries a grid of regularization rates (0.01, 0.1 and 1) for the training script, on a compute cluster, maximizing training accuracy.
-- **Lab_09, pipelines.** Two components defined in YAML, `prep-data` and `train-model`, chained into one pipeline job.
-- **Lab_10, MLflow.** Training with MLflow autologging, then registering the model as `mlflow-diabetes`.
-- **Lab_10, Responsible AI.** A dashboard pipeline that adds error analysis and model explanations to the registered model.
-- **Lab_11, online endpoint.** A managed online endpoint with a `blue` deployment on a `Standard_D2as_v4` instance. For the patient in `sample-data.json`, it returned "Diabetic".
-- **Lab_11, batch endpoint.** A batch deployment of the same MLflow model, which scores the four unlabeled files in `Lab_11/data/` and writes the predictions to the workspace datastore.
+In `Lab_09`, a sweep job tries a grid of regularization rates (0.01, 0.1 and 1) for the training script on a compute cluster, maximizing training accuracy. The second notebook chains two components defined in YAML, `prep-data` and `train-model`, into one pipeline job.
+
+In `Lab_10`, the model is trained with MLflow autologging and registered as `mlflow-diabetes`. A Responsible AI dashboard pipeline then adds error analysis and model explanations to the registered model.
+
+In `Lab_11`, the model goes to a managed online endpoint with a `blue` deployment on a `Standard_D2as_v4` instance. For the patient in `sample-data.json`, it returned "Diabetic". A batch deployment of the same MLflow model scores the four unlabeled files in `Lab_11/data/` and writes the predictions to the workspace datastore.
 
 ## Run the labs
 
